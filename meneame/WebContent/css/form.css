@@ -1,0 +1,201 @@
+body {
+	margin: 0px;
+	background: url(data:image/jpeg;base64,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);
+}
+
+header{
+	width: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+25,ffffff+100 */
+	background: #7FF4FF; /* Old browsers */
+	padding-bottom: 3%;
+	float: left;
+	margin: 0px;
+}
+
+
+
+#logo {
+	display: inline-block;
+	float: left;
+	margin-top: 3%;
+	font-size: 40px;
+	padding-left: 10%;
+}
+
+#logo a{
+	text-decoration: none;
+	color: #817E7E;
+
+}
+
+#logo a:visited{
+	color: #525252;
+}
+
+header nav {
+	float: right;
+}
+
+header nav ul {
+	padding-top: 20%;
+	margin: 0px;
+}
+
+header nav ul li{
+	display: inline;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+header nav ul li a {
+	text-decoration: none;
+	color: #525252;
+	padding: 5px;
+	text-align: center;
+}
+
+header nav ul li a:hover{
+	background-color: #C4C4C4;
+	border-radius: 10px;
+}
+
+#pagina_actual {
+	background-color: #C4C4C4;
+}
+
+#pagina_actual p{
+	display: inline-block;
+	margin: 0px;
+	padding-left: 10%;
+	font-size: 30px;
+	color: white;
+}
+
+
+#searchbox {
+    float: right;
+	display: inline-block;
+    padding-top: 5px;
+    padding-right: 5px;
+}
+
+#submenu {
+	width: 100%;
+	background-color: gray;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#submenu ul {
+	margin: 0px;
+}
+
+#submenu ul li{
+	margin-left: 40px;
+	display: inline;
+	padding-top: 5%;
+}
+
+#submenu ul li a{
+	font-size: 18px;
+	text-decoration: none;
+	color: #FCF9F9;
+	padding: 5px;
+}
+
+#submenu ul li a:visited{
+	color: #FCF9F9;
+}
+
+#submenu ul li a:hover{
+	background-color: #FAFAFA;
+	color: #414141;
+	border-radius: 10px;
+}
+
+fieldset {
+    border-color: black;
+    border-radius: 15px;
+    margin: 2em 10em 2em 10em;
+    font-size: 30px;
+    background-color: #E2FBFD;
+    align-content: center;
+    font-family: verdana;
+    
+}
+
+label {
+    display: block;
+    margin: .5em 0 0 0;
+}
+
+#submit{
+    float: right;
+}
+
+input{
+	font-size: 20px;
+}
+
+textarea{
+	width: 60%;
+}
+
+footer {
+	background-color: #888484;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+footer section{
+	width: 40%;
+	float: left;
+	padding-left: 5%;
+	padding-top: 5px;
+	color: #D0CECE;
+	text-align: justify;
+}
+
+footer #acerca_de{
+	font-family: verdana;
+	font-size: 12px;
+	padding-right: 5%;
+
+}
+
+footer #redes-s{
+	font-family: verdana;
+	border-left-style: dotted;
+
+}
+
+footer #redes-s div{
+	width: 280px;
+	height: auto;
+	float: left;
+	margin-bottom: 5%;
+}
+
+footer #redes-s a {
+	text-decoration: none;
+	color: #D0CECE;
+}
+
+footer #redes-s a div:hover{
+	background-color: #C2C2C2;
+	border-radius: 5%;
+	color: black;
+}
+
+footer #redes-s div img{
+	width: 30%;
+	border-radius: 50%;
+}
+
+footer #redes-s div p{
+	margin: 10%;
+	margin-bottom: 10px;
+	display: inline;
+	font-size: 20px;
+}

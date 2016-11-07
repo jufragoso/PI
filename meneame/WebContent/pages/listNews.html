@@ -1,0 +1,80 @@
+<section id="pagina_actual" >
+	<p>{{vm.actual}}</p>
+	<div id="searchbox">
+		Buscar : <input type="search" name="busqueda" ng-model="buscador">
+	</div>
+</section> 
+
+<section id="noticias"> 
+
+
+<article ng-repeat="noticia in vm.news |filter:buscador">
+	<a href="{{noticia.url }}">{{noticia.title }} </a>
+	<div class="imagen_noticia">
+		<img ng-src=" {{noticia.image }}" alt="noticia 1">
+	</div>
+		<div class="descripcion">
+			<p>
+				<em>enviada por <strong>{{noticia.name}}</strong>
+				</em>
+			</p>
+			<p>
+				{{noticia.text}} <br> <em> Publicado el </em> <strong> {{noticia.datestamp}} </strong> <em>a las </em> <strong>{{noticia.timestamp}}</strong>
+			</p>
+			<div class="acciones" >
+				<form ng-click="goEdit(noticia.id)">
+					<button type="submit" ng-show="vm.user.id==noticia.owner">
+						<img alt="Editar_Noticia" ng-src="http://image005.flaticon.com/141/svg/126/126483.svg">
+					</button>
+				</form>
+				<form ng-click="goDelete(noticia.id)">
+					<button type="submit" ng-show="vm.user.id==noticia.owner">
+						<img alt="Borrar_Noticia" ng-src="http://image005.flaticon.com/59/svg/63/63260.svg">
+					</button>
+				</form>
+				<form ng-click="goComments(noticia.id)">
+					<button type="submit">
+						<img alt="Comentar_Noticia" ng-src="https://cdn2.iconfinder.com/data/icons/3_Minicons-Free-_Pack/46/comments.png" alt="comentarios">
+					</button>
+				</form>
+				<form ng-click="goMeneo(noticia.id)">
+					<button type="submit" >
+						<img alt="Menear_Noticia" ng-src="https://cdn1.iconfinder.com/data/icons/free-98-icons/32/like-128.png" alt="like"> 
+					</button>
+				</form>
+
+				Meneos : {{noticia.likes }}
+				Visitas : {{noticia.hits }}
+			</div>
+		</div>
+
+	</article>
+	
+</section>
+
+<aside>
+	<section>
+		<h2>Destacadas</h2>
+		<ol>
+			<li ng-repeat="destacada in vm.destacadas | limitTo: 3">
+				<a href="{{destacada.url }}"> {{destacada.title }} </a></li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>Más visitadas</h2>
+		<ol>
+			<li ng-repeat="visitadas in vm.visitadas | limitTo: 3">
+				<a href="{{visitadas.url }}"> {{visitadas.title }} </a></li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>Populares</h2>
+		<ol>
+			<li ng-repeat="populares in vm.populares  | limitTo: 3">
+				<a href="{{populares.url }}"> {{populares.title }} </a></li>
+		</ol>
+	</section>
+
+	</aside>

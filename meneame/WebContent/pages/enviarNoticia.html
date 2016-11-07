@@ -1,0 +1,28 @@
+<section id="pagina_actual" >
+	<p>{{vm.actual}}</p>
+</section> 
+
+<form method="post" ng-submit="vm.funciones.escogerOpcion()" action="">
+	<input type="hidden" name="" value=0>
+	<fieldset>
+		
+		<legend>Enviar nueva noticia</legend>
+		<label>Titulo :</label> 
+		<input type="text" name="titulo" placeholder="Titulo de la noticia" ng-model="vm.news.title" autofocus="" required="">
+		<label>Enlace :</label> 
+		<input type="url" name="url" placeholder="Enlace a la noticia" ng-model="vm.news.url"> <label>Texto :</label>
+		<textarea name="texto" rows="5" cols="40" ng-model="vm.news.text"></textarea>
+		<label> Imagen : </label> 
+		<input type="text" name="imagen" ng-model="vm.news.image"> 
+		<label>Categoria	: </label> 
+			Edicion General<input type="radio" name="categoria" value="General" ng-model="vm.news.category" required=""> 
+			Ciencia y tecnologia<input type="radio" name="categoria" value="Ciencia" ng-model="vm.news.category" required=""> 
+			Deportes<input type="radio" name="categoria" value="Deportes" ng-model="vm.news.category" required=""> 
+
+	</fieldset>
+
+	<fieldset>
+		<input type="submit" value="Enviar" id="submit">
+	</fieldset>
+
+</form>

@@ -1,0 +1,34 @@
+<section id="pagina_actual" >
+	<p>{{vm.actual}}</p>
+
+</section> 
+
+<form method="post" ng-submit="vm.funciones.escogerOpcion()" action="">
+	<fieldset>
+		<legend>Registro</legend>	
+			<label>Nombre de usuario:</label>
+			<input type="text" name="name" ng-model="vm.user.name" placeholder="Nombre de usuario" autofocus="" required="">
+			<label>Email : </label>
+			<input type="email" name="email" ng-model="vm.user.email" placeholder="name@example.com" required="">
+			<label>Contraseña :</label>
+			<input type="password" ng-model="vm.user.password" name="password" required="">
+			<label>Verificar contraseña :</label>
+			<input type="password" name="v_password"  ng-model="vm.user.v_password" required="">					
+
+		
+	</fieldset>
+
+	<fieldset>
+		<input type="submit" value="Registrarse" id="submit">
+	</fieldset>
+
+</form>
+
+<form method="get" ng-submit="vm.funciones.eliminarUsuario()" action="../meneame/LogOutServlet" ng-hide="vm.user.id==null">
+	<fieldset>
+		<legend>Borrar Cuenta</legend>
+		<label>Contraseña :</label> <input type="password"
+			name="password_borrar" required=""> <label>Borrar
+			Cuenta :</label> <input type="submit" value="Borrar" id="submit">
+	</fieldset>
+</form>

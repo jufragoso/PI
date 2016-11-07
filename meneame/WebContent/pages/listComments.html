@@ -1,0 +1,102 @@
+<section id="pagina_actual" >
+	<p>Detalle Noticia</p>
+</section> 
+
+<section id="noticias"> 
+<article>
+	<a href="{{vm.news.url }}">{{vm.news.title }} </a>
+	<div class="imagen_noticia">
+		<img ng-src=" {{vm.news.image }}" alt="noticia {{vm.news.id}}">
+	</div>
+		<div class="descripcion">
+			<p>
+				<em>enviada por <strong>{{vm.news.name }}</strong>
+				</em>
+			</p>
+			<p>
+				{{vm.news.text }} <br> <em> Publicado el </em>  <strong>{{vm.news.datestamp }} </strong> <em>a las </em> <strong>
+						{{vm.news.timestamp }}</strong>
+			</p>
+			<div class="acciones" >
+				<form ng-click="goEdit(vm.news.id)">
+					<button type="submit" ng-show="vm.user.id==vm.news.owner">
+						<img alt="Editar_Noticia" src="http://image005.flaticon.com/141/svg/126/126483.svg">
+					</button>
+				</form>
+				<form ng-click="goDelete(vm.news.id)">
+					<button type="submit" ng-show="vm.user.id==vm.news.owner">
+						<img alt="Borrar_Noticia" src="http://image005.flaticon.com/59/svg/63/63260.svg">
+					</button>
+				</form>
+				<form ng-click="goComments(vm.news.id)">
+					<button type="submit">
+						<img alt="Comentar_Noticia" src="https://cdn2.iconfinder.com/data/icons/3_Minicons-Free-_Pack/46/comments.png" alt="comentarios">
+					</button>
+				</form>
+				<form ng-click="goMeneo(vm.news.id)">
+					<button type="submit" >
+						<img alt="Menear_Noticia" src="https://cdn1.iconfinder.com/data/icons/free-98-icons/32/like-128.png" alt="like"> 
+					</button>
+				</form>
+
+				Meneos : {{vm.news.likes }}
+				Visitas : {{vm.news.hits }}
+			</div>
+		</div>
+
+	</article>
+	
+</section>
+
+<aside>
+	<section>
+		<h2>Destacadas</h2>
+		<ol>
+			<li ng-repeat="destacada in vm.destacadas | limitTo: 3">
+				<a href="{{destacada.url }}"> {{destacada.title }} </a></li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>Más visitadas</h2>
+		<ol>
+			<li ng-repeat="visitadas in vm.visitadas | limitTo: 3">
+				<a href="{{visitadas.url }}"> {{visitadas.title }} </a></li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>Populares</h2>
+		<ol>
+			<li ng-repeat="populares in vm.populares  | limitTo: 3">
+				<a href="{{populares.url }}"> {{populares.title }} </a></li>
+		</ol>
+	</section>
+
+</aside>
+
+
+
+<ul id="comentarios" >
+    <form method="get" ng-click="goNewComment(vm.news.id)">
+  		<input type="submit" name="Comentar" value="Comentar">
+   </form>
+    <li ng-repeat="comentario in vm.comments">
+      <div>
+        <h4>#{{comentario.name }}</h4>
+        <p>{{comentario.text }}</p>
+        <p> 
+        {{comentario.datestamp }} - {{comentario.timestamp }}
+        <form method="get" ng-click="goEditComment(comentario.id)">
+	        <button type="submit" name="mod_comentarios" ng-show="vm.user.id == comentario.owner">
+				<img alt="Editar_Noticia" src="http://image005.flaticon.com/141/svg/126/126483.svg">
+			</button>
+        </form>
+         <form method="post" ng-click="goDeleteComment(comentario.id)">
+	        <button type="submit" name="Borrar_comentario" ng-show="vm.user.id == comentario.owner">
+				<img alt="Borrar_Comentario" src="http://image005.flaticon.com/59/svg/63/63260.svg">
+			</button>
+        </form>
+      </div>
+      <li>
+ </ul>

@@ -1,0 +1,16 @@
+<section id="pagina_actual" >
+	<p>{{vm.actual}}</p>
+</section> 
+
+<form method="post" ng-submit="vm.funciones.escogerOpcion(vm.comentario.news)" >
+	<fieldset>
+		<legend>Enviar nuevo comentario</legend>
+		<label>Texto :</label>
+		<textarea name="texto" rows="5" cols="40" ng-model="vm.comentario.text"></textarea>
+	</fieldset>
+
+	<fieldset>
+		<input type="submit" value="Enviar" id="submit">
+	</fieldset>
+
+</form>
